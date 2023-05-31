@@ -6,7 +6,7 @@
 /*   By: ktunchar <ktunchar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/29 04:36:14 by ktunchar          #+#    #+#             */
-/*   Updated: 2023/05/31 23:16:25 by ktunchar         ###   ########.fr       */
+/*   Updated: 2023/05/31 23:43:16 by ktunchar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,5 @@ int	main(int ac, char **av)
 	if (!check_arg(ac, av))
 		exit(1);
 	data = init_data(ac, av);
-	print_data(*data);
-	
-
-	
+	print_data(data);
 }

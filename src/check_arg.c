@@ -6,7 +6,7 @@
 /*   By: ktunchar <ktunchar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/29 04:47:44 by ktunchar          #+#    #+#             */
-/*   Updated: 2023/05/31 22:44:04 by ktunchar         ###   ########.fr       */
+/*   Updated: 2023/05/31 23:42:51 by ktunchar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,13 +31,19 @@ int	check_arg(int ac, char **av)
 {
 	int	i;
 
-	i = 0;
-	if (ac != 5 || ac != 6)
-		return (0);
+	i = 1;
+	if (ac != 5 && ac != 6)
+	{
+		printf("out");
+		return (0); 
+	}
 	while (av[i])
 	{
 		if (!is_str_digit(av[i]))
+		{
+			ft_printf("NOT INT\n");
 			return (0);
+		}
 		i++;
 	}
 	return (1);
