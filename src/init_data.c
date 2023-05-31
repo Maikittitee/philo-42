@@ -1,44 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_arg.c                                        :+:      :+:    :+:   */
+/*   init_data.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ktunchar <ktunchar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/29 04:47:44 by ktunchar          #+#    #+#             */
-/*   Updated: 2023/05/31 22:44:04 by ktunchar         ###   ########.fr       */
+/*   Created: 2023/05/31 22:45:19 by ktunchar          #+#    #+#             */
+/*   Updated: 2023/05/31 23:06:57 by ktunchar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-
-static int	is_str_digit(char *str)
+t_data	*init_data(int ac, char **av)
 {
-	int	i;
+	t_data	*data;
+	int		i;
 
 	i = 0;
-	while (str[i])
-	{
-		if (!ft_isdigit(str[i]))
-			return (0);
-		i++;
-	}
-	return (1);
-}
-
-int	check_arg(int ac, char **av)
-{
-	int	i;
-
-	i = 0;
-	if (ac != 5 || ac != 6)
-		return (0);
-	while (av[i])
-	{
-		if (!is_str_digit(av[i]))
-			return (0);
-		i++;
-	}
-	return (1);
+	data = malloc(sizeof(t_data));
+	data->ac = ac;
+	data->n_philo = ft_atoi(av[1]);
+	data->t_die = ft_atoi(av[2]);
+	data->t_eat = ft_atoi(av[3]);
+	data->t_sleep = ft_atoi(av[4]);
+	if (ac == 6)
+		data->max_eat = ft_atoi(av[5]);
+	return (data);
 }

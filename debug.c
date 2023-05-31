@@ -1,44 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_arg.c                                        :+:      :+:    :+:   */
+/*   debug.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ktunchar <ktunchar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/29 04:47:44 by ktunchar          #+#    #+#             */
-/*   Updated: 2023/05/31 22:44:04 by ktunchar         ###   ########.fr       */
+/*   Created: 2023/05/31 23:02:42 by ktunchar          #+#    #+#             */
+/*   Updated: 2023/05/31 23:16:04 by ktunchar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-
-static int	is_str_digit(char *str)
+void	print_data(t_data data)
 {
-	int	i;
-
-	i = 0;
-	while (str[i])
-	{
-		if (!ft_isdigit(str[i]))
-			return (0);
-		i++;
-	}
-	return (1);
-}
-
-int	check_arg(int ac, char **av)
-{
-	int	i;
-
-	i = 0;
-	if (ac != 5 || ac != 6)
-		return (0);
-	while (av[i])
-	{
-		if (!is_str_digit(av[i]))
-			return (0);
-		i++;
-	}
-	return (1);
+	ft_printf("the number of philo: %d\n", data.n_philo);
+	ft_printf("time to die: %d\n", data.t_die);
+	ft_printf("time to eat: %d\n", data.t_eat);
+	ft_printf("time to sleep:%d\n", data.t_sleep);
+	if (data.ac == 6)
+		ft_printf("max number of eating:%d\n", data.max_eat);
+		
 }
