@@ -6,7 +6,7 @@
 /*   By: ktunchar <ktunchar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/29 04:32:52 by ktunchar          #+#    #+#             */
-/*   Updated: 2023/06/01 17:05:50 by ktunchar         ###   ########.fr       */
+/*   Updated: 2023/06/01 17:50:25 by ktunchar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@
 # include "../lib/libftprintf/ft_printf.h"
 # include <pthread.h>
 # include <unistd.h>
-# include <time.h>
+#include <sys/time.h>
+
+typedef	struct timeval t_time;
 
 typedef struct s_arg{
 	int	ac;
@@ -36,7 +38,7 @@ typedef struct s_philo{
 }t_philo;
 
 typedef struct s_data{
-	time_t start_time;
+	long	ms_start;
 	t_philo *philos;
 	pthread_mutex_t forks;
 	

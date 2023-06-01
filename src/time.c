@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   start.c                                            :+:      :+:    :+:   */
+/*   time.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ktunchar <ktunchar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/01 16:23:06 by ktunchar          #+#    #+#             */
-/*   Updated: 2023/06/01 17:53:09 by ktunchar         ###   ########.fr       */
+/*   Created: 2023/06/01 17:53:19 by ktunchar          #+#    #+#             */
+/*   Updated: 2023/06/01 18:14:24 by ktunchar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-t_data *ft_start(t_arg *arg)
+long	ms_from_epoch(void)
 {
-	t_data *data;
+	t_time t;
+	
+	gettimeofday(&t, NULL);
+	return (t.tv_sec * 1000 + t.tv_usec / 1000);
+	
+}
 
-	data = malloc(sizeof(t_data));
-	if (!data)
-	{
-		//free ((arg))
-		perror("malloc failed.");
-		exit(1);
-	}
-	data->ms_start = ms_from_epoch();
-	data->philos = create_philos(arg);
+long	ms_from_start(t_data *data)
+{
+	t_time t;
 	
+	gettimeofday(&t, NULL);
+	return ((t.tv_sec * 1000 + t.tv_usec / 1000 ) - data->ms_start);9
 	
-	return (data);
 }

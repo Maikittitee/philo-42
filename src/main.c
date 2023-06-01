@@ -6,14 +6,24 @@
 /*   By: ktunchar <ktunchar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/29 04:36:14 by ktunchar          #+#    #+#             */
-/*   Updated: 2023/06/01 16:59:50 by ktunchar         ###   ########.fr       */
+/*   Updated: 2023/06/01 17:49:25 by ktunchar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
+
+// long	now(void)
+// {
+// 	timeval	time;
+
+// 	gettimeofday(&time, NULL);
+// 	return (time.tv_sec * 1000 + time.tv_usec / 1000);
+// }
+
 int	main(int ac, char **av)
 {
+	t_time t;
 	t_arg	*arg;
 	t_data	*data;
 
@@ -21,5 +31,12 @@ int	main(int ac, char **av)
 		exit(1);
 	arg = init_arg(ac, av);
 	data = ft_start(arg);
-	// ft_printf("%ld hello2\n",t);
+	// gettimeofday(&t, NULL);
+	// printf("tv sec :%ld\n", t.tv_sec);
+	// printf("tv usec:%d\n", t.tv_usec);
+	// usleep(1000000);
+	// gettimeofday(&t, NULL);
+	// printf("tv sec :%ld\n", t.tv_sec);
+	// printf("tv usec:%d\n", t.tv_usec);
+	
 }
