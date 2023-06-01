@@ -17,7 +17,9 @@ PRINTF = $(PRINTF_PATH)/libftprintf.a
 SRCS_fILE = main.c\
 		check_arg.c\
 		init_data.c\
-		debug.c
+		debug.c\
+		create_philos.c\
+		start.c
 
 SRCS = $(addprefix $(SRCS_PATH), $(SRCS_fILE))
 

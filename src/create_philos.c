@@ -1,35 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_data.c                                        :+:      :+:    :+:   */
+/*   create_philos.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ktunchar <ktunchar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/31 22:45:19 by ktunchar          #+#    #+#             */
-/*   Updated: 2023/06/01 16:59:43 by ktunchar         ###   ########.fr       */
+/*   Created: 2023/06/01 15:34:48 by ktunchar          #+#    #+#             */
+/*   Updated: 2023/06/01 17:17:13 by ktunchar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-t_arg	*init_arg(int ac, char **av)
+void	*routine()
 {
-	t_arg	*arg_data;
-	int		i;
+	ft_printf("hello there\n");
+	return (0);
+}
+
+t_philo	*create_philos(t_arg *arg)
+{
+	int	i;
+	t_philo *philos;
 
 	i = 0;
-	arg_data = malloc(sizeof(t_arg));
-	if (!arg_data)
+	philos = malloc(sizeof(t_philo));
+	if (!philos)
 	{
+		//free ((arg))
 		perror("malloc failed.");
-		exit(255);
+		exit(1);
 	}
-	arg_data->ac = ac;
-	arg_data->n_philo = ft_atoi(av[1]);
-	arg_data->t_die = ft_atoi(av[2]);
-	arg_data->t_eat = ft_atoi(av[3]);
-	arg_data->t_sleep = ft_atoi(av[4]);
-	if (ac == 6)
-		arg_data->max_eat = ft_atoi(av[5]);
-	return (arg_data);
+	while (i < arg->n_philo)
+	{
+		pthread_create(&(philos[i].th), NULL, &routine, NULL);
+		i++;
+	}
+	i = 0;
+	while (i < arg->n_philo)
+	{
+		pthread_join(((philos[i].th)), NULL);
+		i++;
+	}
+	return (philos);
 }
+
+// void	join_philos(t_arg *arg, t_)	
