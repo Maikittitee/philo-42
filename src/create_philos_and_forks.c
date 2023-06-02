@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   create_philos.c                                    :+:      :+:    :+:   */
+/*   create_philos_and_forks.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ktunchar <ktunchar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 15:34:48 by ktunchar          #+#    #+#             */
-/*   Updated: 2023/06/01 17:25:59 by ktunchar         ###   ########.fr       */
+/*   Updated: 2023/06/02 14:11:19 by ktunchar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,21 +30,26 @@ static void	join_philos(t_arg *arg, t_philo *philos)
 	}
 }	
 
-t_philo	*create_philos(t_arg *arg)
+void	create_philos_and_forks(t_arg *arg, t_data *data)
 {
 	int	i;
-	t_philo *philos;
 
 	i = 0;
-	philos = malloc(sizeof(t_philo));
-	if (!philos)
+	data->philos = malloc(sizeof(t_philo) * arg->n_philo);
+	data->forks = malloc(sizeof(pthread_mutex_t) * arg->n_philo)
+	if (!data->philos)
 	{
 		//free ((arg))
 		perror("malloc failed.");
 		exit(1);
 	}
 	while (i++ < arg->n_philo)
-		pthread_create(&(philos[i].th), NULL, &routine, NULL);
-	join_philos(arg, philos);
-	return (philos);
+	{
+		data->philos[i].id = i + 1;
+		data->philos[i].left = i;
+		data->philos[i].right = (i + 1) % arg->n_philo;
+
+		pthread_create(&(data->philos[i].th), NULL, &routine, NULL);
+	}
+	join_philos(arg, data->philos);
 }

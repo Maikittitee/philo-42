@@ -6,7 +6,7 @@
 /*   By: ktunchar <ktunchar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 17:53:19 by ktunchar          #+#    #+#             */
-/*   Updated: 2023/06/01 18:14:24 by ktunchar         ###   ########.fr       */
+/*   Updated: 2023/06/02 14:03:01 by ktunchar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,6 @@ long	ms_from_start(t_data *data)
 	t_time t;
 	
 	gettimeofday(&t, NULL);
-	return ((t.tv_sec * 1000 + t.tv_usec / 1000 ) - data->ms_start);9
+	return ((t.tv_sec * 1000 + t.tv_usec / 1000 ) - data->ms_start);
 	
 }

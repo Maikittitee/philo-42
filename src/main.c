@@ -6,7 +6,7 @@
 /*   By: ktunchar <ktunchar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/29 04:36:14 by ktunchar          #+#    #+#             */
-/*   Updated: 2023/06/01 17:49:25 by ktunchar         ###   ########.fr       */
+/*   Updated: 2023/06/02 14:07:24 by ktunchar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@
 
 int	main(int ac, char **av)
 {
-	t_time t;
 	t_arg	*arg;
 	t_data	*data;
 
@@ -31,6 +30,7 @@ int	main(int ac, char **av)
 		exit(1);
 	arg = init_arg(ac, av);
 	data = ft_start(arg);
+	
 	// gettimeofday(&t, NULL);
 	// printf("tv sec :%ld\n", t.tv_sec);
 	// printf("tv usec:%d\n", t.tv_usec);

@@ -18,8 +18,9 @@ SRCS_fILE = main.c\
 		check_arg.c\
 		init_data.c\
 		debug.c\
-		create_philos.c\
-		start.c
+		create_philos_and_forks.c\
+		start.c\
+		time.c
 
 SRCS = $(addprefix $(SRCS_PATH), $(SRCS_fILE))
 

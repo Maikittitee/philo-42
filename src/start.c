@@ -6,7 +6,7 @@
 /*   By: ktunchar <ktunchar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 16:23:06 by ktunchar          #+#    #+#             */
-/*   Updated: 2023/06/01 17:53:09 by ktunchar         ###   ########.fr       */
+/*   Updated: 2023/06/02 14:04:21 by ktunchar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ t_data *ft_start(t_arg *arg)
 		exit(1);
 	}
 	data->ms_start = ms_from_epoch();
-	data->philos = create_philos(arg);
+	create_philos_and_forks(arg, data);
 	
 	
 	return (data);
