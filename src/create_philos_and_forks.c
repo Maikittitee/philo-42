@@ -6,17 +6,12 @@
 /*   By: ktunchar <ktunchar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 15:34:48 by ktunchar          #+#    #+#             */
-/*   Updated: 2023/06/02 14:11:19 by ktunchar         ###   ########.fr       */
+/*   Updated: 2023/06/04 22:58:04 by ktunchar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-void	*routine()
-{
-	printf("hello\n");
-	return (0);
-}
 
 static void	join_philos(t_arg *arg, t_philo *philos)
 {
@@ -48,7 +43,6 @@ void	create_philos_and_forks(t_arg *arg, t_data *data)
 		data->philos[i].id = i + 1;
 		data->philos[i].left = i;
 		data->philos[i].right = (i + 1) % arg->n_philo;
-
 		pthread_create(&(data->philos[i].th), NULL, &routine, NULL);
 	}
 	join_philos(arg, data->philos);
