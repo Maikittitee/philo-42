@@ -6,7 +6,7 @@
 /*   By: ktunchar <ktunchar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 15:34:48 by ktunchar          #+#    #+#             */
-/*   Updated: 2023/06/04 22:58:04 by ktunchar         ###   ########.fr       */
+/*   Updated: 2023/06/04 23:05:06 by ktunchar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	create_philos_and_forks(t_arg *arg, t_data *data)
 
 	i = 0;
 	data->philos = malloc(sizeof(t_philo) * arg->n_philo);
-	data->forks = malloc(sizeof(pthread_mutex_t) * arg->n_philo)
+	data->forks = malloc(sizeof(pthread_mutex_t) * arg->n_philo);
 	if (!data->philos)
 	{
 		//free ((arg))
