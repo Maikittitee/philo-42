@@ -6,7 +6,7 @@
 /*   By: ktunchar <ktunchar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 22:45:19 by ktunchar          #+#    #+#             */
-/*   Updated: 2023/06/01 16:59:43 by ktunchar         ###   ########.fr       */
+/*   Updated: 2023/06/05 19:18:53 by ktunchar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,7 @@ t_arg	*init_arg(int ac, char **av)
 	arg_data->t_sleep = ft_atoi(av[4]);
 	if (ac == 6)
 		arg_data->max_eat = ft_atoi(av[5]);
+	else
+		arg_data->max_eat = -1;
 	return (arg_data);
 }
