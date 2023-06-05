@@ -6,7 +6,7 @@
 /*   By: ktunchar <ktunchar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 22:50:26 by ktunchar          #+#    #+#             */
-/*   Updated: 2023/06/05 19:26:36 by ktunchar         ###   ########.fr       */
+/*   Updated: 2023/06/06 01:03:34 by ktunchar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,22 @@ int	take_fork(t_data *data, t_philo *philo)
 }
 
 
-void	*routine(t_data *data, t_philo *philo)
+
+void	*routine(void *arg)
 {
 	// take_fork()
+	t_data	*data;
+	int		i;
 	
+	data = (t_data  *)arg;
+	i = data->philo_id;
+	data->philos[i].id = i + 1;
+	data->philos[i].left = i;
+	data->philos[i].right = (i + 1) % data->arg->n_philo;
+	// printf("hello from philo index %d,i have %d %d\n", i, data->philos[i].left, data->philos[i].right);
 	// check if 2 fork in the hands -> eat
-	if (philo->n_fork == 2)
-		ft_eat();
+	// if (philo->n_fork == 2)
+	// 	ft_eat();
 	// fork in only 1 hand -> unlock -> die 
 	// unlock
 	// if (max_eat = philo->n_eat): return (0);
