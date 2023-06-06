@@ -6,7 +6,7 @@
 /*   By: ktunchar <ktunchar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/29 04:36:14 by ktunchar          #+#    #+#             */
-/*   Updated: 2023/06/02 14:07:24 by ktunchar         ###   ########.fr       */
+/*   Updated: 2023/06/06 23:26:21 by ktunchar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,18 @@ int	main(int ac, char **av)
 {
 	t_arg	*arg;
 	t_data	*data;
+	int	i;
 
 	if (!check_arg(ac, av))
 		exit(1);
 	arg = init_arg(ac, av);
 	data = ft_start(arg);
+	i = 0;
+	while (i < data->arg->n_philo)
+	{
+		pthread_mutex_destroy(&data->forks[i]);
+		i++;
+	}
 	
 	// gettimeofday(&t, NULL);
 	// printf("tv sec :%ld\n", t.tv_sec);

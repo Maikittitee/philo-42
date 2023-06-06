@@ -6,7 +6,7 @@
 /*   By: ktunchar <ktunchar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/29 04:32:52 by ktunchar          #+#    #+#             */
-/*   Updated: 2023/06/06 16:03:28 by ktunchar         ###   ########.fr       */
+/*   Updated: 2023/06/06 22:55:33 by ktunchar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ typedef struct s_philo{
 	int	left;
 	int	right;
 	int	n_fork;
+	int	n_eat;
 	
 }t_philo;
 
@@ -55,7 +56,7 @@ typedef struct s_data{
 #define EATING 1
 #define THINKING 2
 #define SLEEPING 3
-#define	T_DIED "%ld philo%d Died\n"
+#define	T_DIED "\e[0;31m%ld philo%d Died\e[0m\n"
 #define	T_LTAKING "%ld philo%d is taking left fork\n"
 #define	T_RTAKING "%ld philo%d is taking right fork\n"
 #define	T_EATING "%ld philo%d is Eating\n"
