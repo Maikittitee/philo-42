@@ -6,7 +6,7 @@
 /*   By: ktunchar <ktunchar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/29 04:32:52 by ktunchar          #+#    #+#             */
-/*   Updated: 2023/06/06 00:57:33 by ktunchar         ###   ########.fr       */
+/*   Updated: 2023/06/06 13:21:17 by ktunchar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ typedef struct s_data{
 	t_philo 		*philos;
 	pthread_mutex_t *forks;
 	t_arg			*arg;
+	
 	
 }t_data;
 
