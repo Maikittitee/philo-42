@@ -6,7 +6,7 @@
 /*   By: ktunchar <ktunchar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/29 04:36:14 by ktunchar          #+#    #+#             */
-/*   Updated: 2023/06/06 23:26:21 by ktunchar         ###   ########.fr       */
+/*   Updated: 2023/06/08 03:09:09 by ktunchar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,11 @@ int	main(int ac, char **av)
 		pthread_mutex_destroy(&data->forks[i]);
 		i++;
 	}
+	// while (!check_die(data))
+	// {
+	// 	usleep(50);
+	// }
+	printf(T_DIED, ms_from_start(data) , 999);
 	
 	// gettimeofday(&t, NULL);
 	// printf("tv sec :%ld\n", t.tv_sec);

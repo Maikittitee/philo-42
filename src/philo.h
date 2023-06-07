@@ -6,7 +6,7 @@
 /*   By: ktunchar <ktunchar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/29 04:32:52 by ktunchar          #+#    #+#             */
-/*   Updated: 2023/06/07 23:23:33 by ktunchar         ###   ########.fr       */
+/*   Updated: 2023/06/08 02:56:52 by ktunchar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,5 +80,7 @@ void    *routine();
 // time
 long	ms_from_epoch(void);
 long	ms_from_start(t_data *data);
+
+int	check_die(t_data  *data);
 
 #endif

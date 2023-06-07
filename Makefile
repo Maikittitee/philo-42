@@ -21,7 +21,8 @@ SRCS_fILE = main.c\
 		create_philos_and_forks.c\
 		start.c\
 		time.c\
-		routine.c
+		routine.c\
+		die.c
 
 SRCS = $(addprefix $(SRCS_PATH), $(SRCS_fILE))
 
