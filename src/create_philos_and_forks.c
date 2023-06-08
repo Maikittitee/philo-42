@@ -6,7 +6,7 @@
 /*   By: ktunchar <ktunchar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 15:34:48 by ktunchar          #+#    #+#             */
-/*   Updated: 2023/06/06 23:51:20 by ktunchar         ###   ########.fr       */
+/*   Updated: 2023/06/08 22:20:51 by ktunchar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,9 +54,14 @@ void	create_philos_and_forks(t_arg *arg, t_data *data)
 	{
 		data->philo_id = i;
 		pthread_create(&(data->philos[i].th), NULL, &routine, data);
-		pthread_mutex_init(&data->forks[i], NULL);
+		pthread_detach(data->philos[i].th);
+		data->philos[i].start_ms = ms_from_epoch();
+		data->philos[i].n_eat = 0;
+		data->philos[i].n_fork = 0;
 		usleep(50);
-		i++;
+		i += 2;
+		if (i >= arg->n_philo && i % 2 == 0)
+			i = 1;
 	}
 	join_philos(arg, data->philos);
 }

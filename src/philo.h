@@ -6,7 +6,7 @@
 /*   By: ktunchar <ktunchar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/29 04:32:52 by ktunchar          #+#    #+#             */
-/*   Updated: 2023/06/08 02:56:52 by ktunchar         ###   ########.fr       */
+/*   Updated: 2023/06/08 21:51:02 by ktunchar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,12 @@ typedef struct s_arg{
 typedef struct s_philo{
 	pthread_t th;
 	int	id;
-	int	status;
 	int	left;
 	int	right;
 	int	n_fork;
 	int	n_eat;
-	int	last_eat_ms;
+	long	last_eat_ms;
+	long	start_ms;
 	
 }t_philo;
 
@@ -80,6 +80,7 @@ void    *routine();
 // time
 long	ms_from_epoch(void);
 long	ms_from_start(t_data *data);
+long	ms_time_diff(long past);
 
 int	check_die(t_data  *data);
 

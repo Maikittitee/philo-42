@@ -6,7 +6,7 @@
 /*   By: ktunchar <ktunchar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 01:49:02 by ktunchar          #+#    #+#             */
-/*   Updated: 2023/06/08 03:09:36 by ktunchar         ###   ########.fr       */
+/*   Updated: 2023/06/09 00:46:07 by ktunchar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,10 @@
 
 int	time_to_die(t_data *data, t_philo *philo)
 {
-	if (ms_from_start(data) - philo->last_eat_ms >= data->arg->t_die)
+	if (ms_time_diff(philo->last_eat_ms) > (long)data->arg->t_die)
+	{
 		return (1);
+	}
 	return (0);
 }
 
@@ -24,16 +26,23 @@ int	check_die(t_data  *data)
 	int	i;
 
 	i = 0;
-	while (i < data->arg->n_philo)
+	// printf("HERE");
+	while (!data->die_flag)
 	{
-		if (time_to_die(data, &(data->philos[i])) || \
-			data->philos[i].n_eat >= data->arg->max_eat)
-			{
-				data->die_flag = 1;
-				return (1);
-			}
+		// printf("the died checked id is %d\n", i);
+		if (time_to_die(data, &(data->philos[i])))
+		{
+			data->die_flag = 1;
+			return (i);
+		}
+		if (data->arg->max_eat != -1 && data->philos[i].n_eat > data->arg->max_eat)
+		{
+			data->die_flag = 1;
+			return (i);
+		}
 		i++;
 		i %= data->arg->n_philo; 
+		usleep(50);
 	}
-	return (0);
+	return (-1);
 }
