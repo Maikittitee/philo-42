@@ -6,7 +6,7 @@
 /*   By: ktunchar <ktunchar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/29 04:36:14 by ktunchar          #+#    #+#             */
-/*   Updated: 2023/06/09 00:47:09 by ktunchar         ###   ########.fr       */
+/*   Updated: 2023/06/09 03:43:19 by ktunchar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,11 @@ int	main(int ac, char **av)
 		i++;
 	}
 	die = check_die(data);
-	printf(T_DIED, ms_from_start(data) , die + 1);
+	if (die != -1)
+		printf(T_DIED, ms_from_start(data) , die + 1);
+	free_philo(data);
+	// free arg
+	// free data -> free fork , philo
+	
 		
 }

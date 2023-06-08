@@ -6,7 +6,7 @@
 /*   By: ktunchar <ktunchar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/29 04:32:52 by ktunchar          #+#    #+#             */
-/*   Updated: 2023/06/08 21:51:02 by ktunchar         ###   ########.fr       */
+/*   Updated: 2023/06/09 03:43:06 by ktunchar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,5 +83,5 @@ long	ms_from_start(t_data *data);
 long	ms_time_diff(long past);
 
 int	check_die(t_data  *data);
-
+void	free_philo(t_data *data);
 #endif

@@ -6,7 +6,7 @@
 /*   By: ktunchar <ktunchar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 01:49:02 by ktunchar          #+#    #+#             */
-/*   Updated: 2023/06/09 00:46:07 by ktunchar         ###   ########.fr       */
+/*   Updated: 2023/06/09 03:38:32 by ktunchar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,8 @@ int	check_die(t_data  *data)
 	int	i;
 
 	i = 0;
-	// printf("HERE");
 	while (!data->die_flag)
 	{
-		// printf("the died checked id is %d\n", i);
 		if (time_to_die(data, &(data->philos[i])))
 		{
 			data->die_flag = 1;
@@ -38,7 +36,7 @@ int	check_die(t_data  *data)
 		if (data->arg->max_eat != -1 && data->philos[i].n_eat > data->arg->max_eat)
 		{
 			data->die_flag = 1;
-			return (i);
+			return (-1);
 		}
 		i++;
 		i %= data->arg->n_philo; 

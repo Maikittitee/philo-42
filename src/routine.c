@@ -78,10 +78,8 @@ void	*routine(void *arg)
 		data->philos[i].last_eat_ms = ms_from_epoch();
 		if (ft_eat(data, &(data->philos[i])))
 			return (0);
-		data->philos[i].n_eat += 1;	
+		data->philos[i].n_eat ++;	
 		put_fork_down(data, &(data->philos[i]));
-		if (data->philos[i].n_eat >= data->arg->max_eat)
-			return (0);
 		if (ft_sleep(data, &(data->philos[i])))
 			return (0);
 		printf(T_THINKING, ms_from_start(data), data->philos[i].id);

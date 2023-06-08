@@ -22,7 +22,8 @@ SRCS_fILE = main.c\
 		start.c\
 		time.c\
 		routine.c\
-		die.c
+		die.c\
+		free.c
 
 SRCS = $(addprefix $(SRCS_PATH), $(SRCS_fILE))
 
