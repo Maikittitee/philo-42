@@ -1,4 +1,4 @@
-/* ************************************************************************** */
+	/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   philo.h                                            :+:      :+:    :+:   */
@@ -6,7 +6,7 @@
 /*   By: ktunchar <ktunchar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/29 04:32:52 by ktunchar          #+#    #+#             */
-/*   Updated: 2023/06/09 03:43:06 by ktunchar         ###   ########.fr       */
+/*   Updated: 2023/06/10 00:41:12 by ktunchar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,16 @@
 # include <pthread.h>
 # include <unistd.h>
 #include <sys/time.h>
+#include <limits.h>
 
 typedef	struct timeval t_time;
 
 typedef struct s_arg{
-	int	ac;
-	int	n_philo;
-	int	t_die;
-	int	t_eat;
-	int	t_sleep;
-	int	max_eat;	
+	long long	n_philo;
+	long long	t_die;
+	long long	t_eat;
+	long long	t_sleep;
+	long long	max_eat;	
 }t_arg;
 
 typedef struct s_philo{
@@ -68,8 +68,8 @@ int		check_arg(int ac, char **av);
 
 // get_data_from_arg && starting
 t_arg	*init_arg(int ac, char **av);
-t_data *ft_start(t_arg *arg);
-void	create_philos_and_forks(t_arg *arg, t_data *data);
+t_data *ft_start(int ac, char **av);
+void	create_philos_and_forks(t_data *data);
 
 // debugging
 void	print_arg_data(t_arg *arg);
@@ -84,4 +84,7 @@ long	ms_time_diff(long past);
 
 int	check_die(t_data  *data);
 void	free_philo(t_data *data);
+void	free_arg(t_data *data);
+
+
 #endif

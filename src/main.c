@@ -6,44 +6,29 @@
 /*   By: ktunchar <ktunchar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/29 04:36:14 by ktunchar          #+#    #+#             */
-/*   Updated: 2023/06/09 03:43:19 by ktunchar         ###   ########.fr       */
+/*   Updated: 2023/06/09 23:01:21 by ktunchar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-
-// long	now(void)
-// {
-// 	timeval	time;
-
-// 	gettimeofday(&time, NULL);
-// 	return (time.tv_sec * 1000 + time.tv_usec / 1000);
-// }
-
 int	main(int ac, char **av)
 {
-	t_arg	*arg;
 	t_data	*data;
-	int	i;
 	int	die;
+	int	i;
 
-	if (!check_arg(ac, av))
-		exit(1);
-	arg = init_arg(ac, av);
-	data = ft_start(arg);
 	i = 0;
+	if (!check_arg(ac, av))
+		return(EXIT_FAILURE);
+	data = ft_start(ac ,av);
+	if (!data)
+		return (EXIT_FAILURE);
 	while (i < data->arg->n_philo)
-	{
-		pthread_mutex_destroy(&data->forks[i]);
-		i++;
-	}
+		pthread_mutex_destroy(&data->forks[i++]);
 	die = check_die(data);
 	if (die != -1)
 		printf(T_DIED, ms_from_start(data) , die + 1);
 	free_philo(data);
-	// free arg
-	// free data -> free fork , philo
-	
-		
+	free_arg(data);
 }
