@@ -6,7 +6,7 @@
 /*   By: ktunchar <ktunchar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 22:45:19 by ktunchar          #+#    #+#             */
-/*   Updated: 2023/06/10 01:41:40 by ktunchar         ###   ########.fr       */
+/*   Updated: 2023/06/10 03:07:36 by ktunchar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,3 +70,4 @@ t_arg	*init_arg(int ac, char **av)
 	}
 	return (arg_data);
 }
+
