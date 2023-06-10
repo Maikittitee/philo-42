@@ -6,7 +6,7 @@
 /*   By: ktunchar <ktunchar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 23:02:42 by ktunchar          #+#    #+#             */
-/*   Updated: 2023/06/09 22:20:05 by ktunchar         ###   ########.fr       */
+/*   Updated: 2023/06/11 02:23:45 by ktunchar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,9 @@
 
 void	print_arg_data(t_arg *arg_data)
 {
-	printf("number of philo: %d\n", arg_data->n_philo);
-	printf("time to die: %ld\n", arg_data->t_die);
-	printf("time to eat: %ld\n", arg_data->t_eat);
-	printf("time to sleep:%ld\n", arg_data->t_sleep);
-	if (arg_data->ac == 6)
-		printf("max number of eating:%d\n", arg_data->max_eat);
+	printf("number of philo: %lld\n", arg_data->n_philo);
+	printf("time to die: %lld\n", arg_data->t_die);
+	printf("time to eat: %lld\n", arg_data->t_eat);
+	printf("time to sleep:%lld\n", arg_data->t_sleep);
+	printf("max number of eating:%lld\n", arg_data->max_eat);
 }

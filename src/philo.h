@@ -75,7 +75,7 @@ void	create_philos_and_forks(t_data *data);
 void	print_arg_data(t_arg *arg);
 
 // routine
-void    *routine();
+void    *routine(void *arg);
 
 // time
 long	ms_from_epoch(void);

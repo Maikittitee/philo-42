@@ -6,7 +6,7 @@
 /*   By: ktunchar <ktunchar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 22:45:19 by ktunchar          #+#    #+#             */
-/*   Updated: 2023/06/10 03:07:36 by ktunchar         ###   ########.fr       */
+/*   Updated: 2023/06/11 02:22:40 by ktunchar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,10 @@
 long long ft_atol(const char *str)
 {
 	long long		result;
-	int				ngt;
 	int				i;
 
 	i = 0;
 	result = 0;
-	ngt = 1;
 	while (str[i])
 	{
 		result = (result * 10) + (str[i] - '0');
@@ -48,10 +46,7 @@ int		is_limit(t_arg *arg)
 t_arg	*init_arg(int ac, char **av)
 {
 	t_arg	*arg_data;
-	int		err;
-	int		i;
 
-	i = 0;
 	arg_data = malloc(sizeof(t_arg));
 	if (!arg_data)
 		return (NULL);
