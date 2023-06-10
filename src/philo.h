@@ -14,11 +14,11 @@
 # define PHILO_H
 
 # include "../lib/libft/libft.h"
-# include "../lib/libftprintf/ft_printf.h"
 # include <pthread.h>
 # include <unistd.h>
-#include <sys/time.h>
-#include <limits.h>
+# include <stdio.h>
+# include <sys/time.h>
+# include <limits.h>
 
 typedef	struct timeval t_time;
 
