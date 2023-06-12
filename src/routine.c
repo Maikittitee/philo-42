@@ -64,6 +64,7 @@ void	*routine(void *arg)
 	data->philos[i].id = i + 1;
 	data->philos[i].left = i;
 	data->philos[i].n_eat = 0;
+	data->philos[i].done = 0;
 	data->philos[i].right = (i + 1) % data->arg->n_philo;
 	data->philos[i].last_eat_ms = data->philos[i].start_ms;
 	while (!data->die_flag)
@@ -73,6 +74,8 @@ void	*routine(void *arg)
 		if (ft_eat(data, &(data->philos[i])))
 			return (0);
 		data->philos[i].n_eat++;
+		// if (data->philos[i].n_eat == data->arg->max_eat)
+		// 	return (0);
 		put_fork_down(data, &(data->philos[i]));
 		if (ft_sleep(data, &(data->philos[i])))
 			return (0);

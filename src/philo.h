@@ -36,6 +36,7 @@ typedef struct s_philo{
 	int	left;
 	int	right;
 	int	n_eat;
+	int	done;
 	long	last_eat_ms;
 	long	start_ms;
 	
