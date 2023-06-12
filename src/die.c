@@ -6,7 +6,7 @@
 /*   By: ktunchar <ktunchar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 01:49:02 by ktunchar          #+#    #+#             */
-/*   Updated: 2023/06/13 04:41:20 by ktunchar         ###   ########.fr       */
+/*   Updated: 2023/06/13 04:55:07 by ktunchar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int	check_die(t_data *data)
 			return (-1);
 		i++;
 		i %= data->arg->n_philo;
-		usleep(10);
+		usleep(50);
 	}
 	return (-1);
 }
