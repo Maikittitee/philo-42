@@ -6,13 +6,13 @@
 /*   By: ktunchar <ktunchar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 22:45:19 by ktunchar          #+#    #+#             */
-/*   Updated: 2023/06/11 02:22:40 by ktunchar         ###   ########.fr       */
+/*   Updated: 2023/06/13 01:11:14 by ktunchar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-long long ft_atol(const char *str)
+long long	ft_atol(const char *str)
 {
 	long long		result;
 	int				i;
@@ -27,7 +27,7 @@ long long ft_atol(const char *str)
 	return (result);
 }
 
-int		is_limit(t_arg *arg)
+int	is_limit(t_arg *arg)
 {
 	if (arg->n_philo > 200 || arg->n_philo < 1)
 		return (1);
@@ -36,11 +36,10 @@ int		is_limit(t_arg *arg)
 	if (arg->t_eat > INT_MAX || arg->t_eat < 1)
 		return (1);
 	if (arg->t_sleep > INT_MAX || arg->t_sleep < 1)
-		return (1);	
+		return (1);
 	if (arg->max_eat > INT_MAX || (arg->max_eat != -1 && arg->max_eat < 1))
 		return (1);
-	return(0);	
-	
+	return (0);
 }
 
 t_arg	*init_arg(int ac, char **av)
@@ -65,4 +64,3 @@ t_arg	*init_arg(int ac, char **av)
 	}
 	return (arg_data);
 }
-

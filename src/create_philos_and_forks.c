@@ -6,7 +6,7 @@
 /*   By: ktunchar <ktunchar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 15:34:48 by ktunchar          #+#    #+#             */
-/*   Updated: 2023/06/09 20:51:03 by ktunchar         ###   ########.fr       */
+/*   Updated: 2023/06/13 03:05:57 by ktunchar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,32 +36,47 @@ static void	init_fork(t_data *data)
 	}
 }	
 
-void	create_philos_and_forks(t_data *data)
+static void	init_philo(t_data *data)
 {
 	int	i;
 
 	i = 0;
-	data->philos = malloc(sizeof(t_philo) * data->arg->n_philo);
-	data->forks = malloc(sizeof(pthread_mutex_t) * data->arg->n_philo);
-	if (!data->philos)
-	{
-		//free ((arg))
-		perror("malloc failed.");
-		exit(1);
-	}
-	init_fork(data);
 	while (i < data->arg->n_philo)
 	{
 		data->philo_id = i;
+		data->philos[i].start_ms = ms_from_epoch();
+		// data->philos[i].n_eat = 0;
 		pthread_create(&(data->philos[i].th), NULL, &routine, data);
 		pthread_detach(data->philos[i].th);
-		data->philos[i].start_ms = ms_from_epoch();
-		data->philos[i].n_eat = 0;
-		data->philos[i].n_fork = 0;
 		usleep(50);
 		i += 2;
 		if (i >= data->arg->n_philo && i % 2 == 0)
 			i = 1;
 	}
+}
+
+int	create_philos_and_forks(t_data *data)
+{
+	int	i;
+
+	i = 0;
+	data->philos = malloc(sizeof(t_philo) * data->arg->n_philo);
+	if (!data->philos)
+	{
+		free_arg(data);
+		perror("malloc philo failed.");
+		return (0);
+	}
+	data->forks = malloc(sizeof(pthread_mutex_t) * data->arg->n_philo);
+	if (!data->forks)
+	{
+		free(data->philos);
+		free_arg(data);
+		perror("malloc forks failed.");
+		return (0);
+	}
+	init_fork(data);
+	init_philo(data);
 	join_philos(data->arg, data->philos);
+	return (1);
 }

@@ -35,7 +35,6 @@ typedef struct s_philo{
 	int	id;
 	int	left;
 	int	right;
-	int	n_fork;
 	int	n_eat;
 	long	last_eat_ms;
 	long	start_ms;
@@ -69,7 +68,7 @@ int		check_arg(int ac, char **av);
 // get_data_from_arg && starting
 t_arg	*init_arg(int ac, char **av);
 t_data *ft_start(int ac, char **av);
-void	create_philos_and_forks(t_data *data);
+int		create_philos_and_forks(t_data *data);
 
 // debugging
 void	print_arg_data(t_arg *arg);
