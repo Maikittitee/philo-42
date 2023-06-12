@@ -1,12 +1,12 @@
-/* ************************************************************************* */
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   routine.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ktunchar <ktunchar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/04 22:50:26 by ktunchar          #+#    #+#             */
-/*   Updated: 2023/06/06 13:06:58 by ktunchar         ###   ########.fr       */
+/*   Created: 2023/06/13 04:40:54 by ktunchar          #+#    #+#             */
+/*   Updated: 2023/06/13 04:40:55 by ktunchar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,11 @@
 
 int	put_fork_down(t_data *data, t_philo *philo)
 {
-	if (data->die_flag || pthread_mutex_unlock(&(data->forks[philo->right])) == -1)
+	if (data->die_flag \
+		|| pthread_mutex_unlock(&(data->forks[philo->right])) != 0)
 		return (0);
-	if (data->die_flag || pthread_mutex_unlock(&(data->forks[philo->left])) == -1)
+	if (data->die_flag \
+		|| pthread_mutex_unlock(&(data->forks[philo->left])) != 0)
 		return (0);
 	return (1);
 }
@@ -74,8 +76,6 @@ void	*routine(void *arg)
 		if (ft_eat(data, &(data->philos[i])))
 			return (0);
 		data->philos[i].n_eat++;
-		// if (data->philos[i].n_eat == data->arg->max_eat)
-		// 	return (0);
 		put_fork_down(data, &(data->philos[i]));
 		if (ft_sleep(data, &(data->philos[i])))
 			return (0);
