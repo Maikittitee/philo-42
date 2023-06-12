@@ -6,7 +6,7 @@
 /*   By: ktunchar <ktunchar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 15:34:48 by ktunchar          #+#    #+#             */
-/*   Updated: 2023/06/13 04:53:23 by ktunchar         ###   ########.fr       */
+/*   Updated: 2023/06/13 05:19:25 by ktunchar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ static void	init_philo(t_data *data)
 		data->philos[i].start_ms = ms_from_epoch();
 		pthread_create(&(data->philos[i].th), NULL, &routine, data);
 		pthread_detach(data->philos[i].th);
-		usleep(50);
+		usleep(10);
 		i += 2;
 		if (i >= data->arg->n_philo && i % 2 == 0)
 			i = 1;

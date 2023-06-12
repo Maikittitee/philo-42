@@ -6,7 +6,7 @@
 /*   By: ktunchar <ktunchar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 01:49:02 by ktunchar          #+#    #+#             */
-/*   Updated: 2023/06/13 04:55:07 by ktunchar         ###   ########.fr       */
+/*   Updated: 2023/06/13 05:19:57 by ktunchar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	time_to_die(t_data *data, t_philo *philo)
 {
-	if (ms_time_diff(philo->last_eat_ms) > (long)data->arg->t_die)
+	if ((philo->last_eat_ms) > (long)data->arg->t_die)
 	{
 		return (1);
 	}
@@ -45,7 +45,7 @@ int	check_die(t_data *data)
 			return (-1);
 		i++;
 		i %= data->arg->n_philo;
-		usleep(50);
+		usleep(10);
 	}
 	return (-1);
 }
