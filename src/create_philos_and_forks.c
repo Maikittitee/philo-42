@@ -6,23 +6,23 @@
 /*   By: ktunchar <ktunchar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 15:34:48 by ktunchar          #+#    #+#             */
-/*   Updated: 2023/06/13 05:19:25 by ktunchar         ###   ########.fr       */
+/*   Updated: 2023/06/13 05:25:42 by ktunchar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-static void	join_philos(t_arg *arg, t_philo *philos)
-{
-	int	i;
+// static void	join_philos(t_arg *arg, t_philo *philos)
+// {
+// 	int	i;
 
-	i = 0;
-	while (i < arg->n_philo)
-	{
-		pthread_join(((philos[i].th)), NULL);
-		i++;
-	}
-}
+// 	i = 0;
+// 	while (i < arg->n_philo)
+// 	{
+// 		pthread_join(((philos[i].th)), NULL);
+// 		i++;
+// 	}
+// }
 
 static void	init_fork(t_data *data)
 {
@@ -47,7 +47,7 @@ static void	init_philo(t_data *data)
 		data->philos[i].start_ms = ms_from_epoch();
 		pthread_create(&(data->philos[i].th), NULL, &routine, data);
 		pthread_detach(data->philos[i].th);
-		usleep(10);
+		usleep(50);
 		i += 2;
 		if (i >= data->arg->n_philo && i % 2 == 0)
 			i = 1;
@@ -76,6 +76,6 @@ int	create_philos_and_forks(t_data *data)
 	}
 	init_fork(data);
 	init_philo(data);
-	join_philos(data->arg, data->philos);
+	// join_philos(data->arg, data->philos);
 	return (1);
 }
