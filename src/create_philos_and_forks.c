@@ -6,23 +6,11 @@
 /*   By: ktunchar <ktunchar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 15:34:48 by ktunchar          #+#    #+#             */
-/*   Updated: 2023/06/13 15:51:42 by ktunchar         ###   ########.fr       */
+/*   Updated: 2023/06/13 23:08:34 by ktunchar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
-
-// static void	join_philos(t_arg *arg, t_philo *philos)
-// {
-// 	int	i;
-
-// 	i = 0;
-// 	while (i < arg->n_philo)
-// 	{
-// 		pthread_join(((philos[i].th)), NULL);
-// 		i++;
-// 	}
-// }
 
 static void	start_fork(t_data *data)
 {
@@ -93,6 +81,5 @@ int	create_philos_and_forks(t_data *data)
 	init_fork(data);
 	start_fork(data);
 	start_philo(data);
-	// join_philos(data->arg, data->philos);
 	return (1);
 }
