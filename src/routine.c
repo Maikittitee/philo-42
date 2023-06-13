@@ -6,7 +6,7 @@
 /*   By: ktunchar <ktunchar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 04:40:54 by ktunchar          #+#    #+#             */
-/*   Updated: 2023/06/13 05:18:54 by ktunchar         ###   ########.fr       */
+/*   Updated: 2023/06/13 15:51:18 by ktunchar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,11 +63,6 @@ void	*routine(void *arg)
 
 	data = (t_data *)arg;
 	i = data->philo_id;
-	data->philos[i].id = i + 1;
-	data->philos[i].left = i;
-	data->philos[i].n_eat = 0;
-	data->philos[i].done = 0;
-	data->philos[i].right = (i + 1) % data->arg->n_philo;
 	data->philos[i].last_eat_ms = data->philos[i].start_ms;
 	while (!data->die_flag)
 	{
