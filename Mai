@@ -1,0 +1,124 @@
+0ms philo1 is taking right fork
+0ms philo1 is taking left fork
+0ms philo1 is Eating
+0ms philo3 is taking right fork
+0ms philo3 is taking left fork
+0ms philo3 is Eating
+200ms philo3 is Sleeping
+200ms philo2 is taking right fork
+200ms philo2 is taking left fork
+200ms philo2 is Eating
+200ms philo1 is Sleeping
+200ms philo4 is taking right fork
+200ms philo4 is taking left fork
+200ms philo4 is Eating
+400ms philo2 is Sleeping
+400ms philo3 is Thinking
+400ms philo1 is Thinking
+400ms philo1 is taking right fork
+400ms philo1 is taking left fork
+400ms philo1 is Eating
+400ms philo4 is Sleeping
+400ms philo3 is taking right fork
+400ms philo3 is taking left fork
+400ms philo3 is Eating
+600ms philo1 is Sleeping
+600ms philo2 is Thinking
+600ms philo2 is taking right fork
+600ms philo2 is taking left fork
+600ms philo3 is Sleeping
+600ms philo4 is Thinking
+600ms philo4 is taking right fork
+600ms philo4 is taking left fork
+600ms philo4 is Eating
+600ms philo2 is Eating
+800ms philo3 is Thinking
+800ms philo1 is Thinking
+800ms philo4 is Sleeping
+800ms philo3 is taking right fork
+800ms philo3 is taking left fork
+800ms philo2 is Sleeping
+800ms philo1 is taking right fork
+800ms philo3 is Eating
+800ms philo1 is taking left fork
+800ms philo1 is Eating
+1000ms philo2 is Thinking
+1000ms philo1 is Sleeping
+1000ms philo2 is taking right fork
+1000ms philo3 is Sleeping
+1000ms philo2 is taking left fork
+1000ms philo2 is Eating
+1000ms philo4 is Thinking
+1000ms philo4 is taking right fork
+1000ms philo4 is taking left fork
+1000ms philo4 is Eating
+1200ms philo4 is Sleeping
+1200ms philo3 is Thinking
+1200ms philo3 is taking right fork
+1200ms philo1 is Thinking
+1200ms philo2 is Sleeping
+1200ms philo1 is taking right fork
+1200ms philo1 is taking left fork
+1200ms philo1 is Eating
+1200ms philo3 is taking left fork
+1200ms philo3 is Eating
+1400ms philo1 is Sleeping
+1400ms philo3 is Sleeping
+1400ms philo2 is Thinking
+1400ms philo2 is taking right fork
+1400ms philo2 is taking left fork
+1400ms philo2 is Eating
+1400ms philo4 is Thinking
+1400ms philo4 is taking right fork
+1400ms philo4 is taking left fork
+1400ms philo4 is Eating
+1600ms philo4 is Sleeping
+1600ms philo1 is Thinking
+1600ms philo1 is taking right fork
+1600ms philo1 is taking left fork
+1600ms philo1 is Eating
+1600ms philo3 is Thinking
+1600ms philo3 is taking right fork
+1600ms philo3 is taking left fork
+1600ms philo3 is Eating
+1600ms philo2 is Sleeping
+1800ms philo2 is Thinking
+1800ms philo4 is Thinking
+1800ms philo3 is Sleeping
+1800ms philo2 is taking right fork
+1800ms philo2 is taking left fork
+1800ms philo1 is Sleeping
+1800ms philo4 is taking right fork
+1800ms philo4 is taking left fork
+1800ms philo4 is Eating
+1800ms philo2 is Eating
+2000ms philo2 is Sleeping
+2000ms philo3 is Thinking
+2000ms philo3 is taking right fork
+2000ms philo3 is taking left fork
+2000ms philo3 is Eating
+2000ms philo4 is Sleeping
+2000ms philo1 is Thinking
+2000ms philo1 is taking right fork
+2000ms philo1 is taking left fork
+2000ms philo1 is Eating
+2200ms philo4 is Thinking
+2200ms philo4 is taking right fork
+2200ms philo4 is taking left fork
+2200ms philo4 is Eating
+2200ms philo3 is Sleeping
+2200ms philo1 is Sleeping
+2200ms philo2 is Thinking
+2200ms philo2 is taking right fork
+2200ms philo2 is taking left fork
+2200ms philo2 is Eating
+2400ms philo1 is Thinking
+2400ms philo4 is Sleeping
+2400ms philo2 is Sleeping
+2400ms philo1 is taking right fork
+2400ms philo1 is taking left fork
+2400ms philo1 is Eating
+2400ms philo3 is Thinking
+2400ms philo3 is taking right fork
+2400ms philo3 is taking left fork
+2400ms philo3 is Eating
