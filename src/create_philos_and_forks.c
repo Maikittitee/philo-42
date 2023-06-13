@@ -6,7 +6,7 @@
 /*   By: ktunchar <ktunchar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 15:34:48 by ktunchar          #+#    #+#             */
-/*   Updated: 2023/06/14 00:06:24 by ktunchar         ###   ########.fr       */
+/*   Updated: 2023/06/14 00:30:47 by ktunchar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,9 +60,6 @@ static void	init_fork(t_data *data)
 
 int	create_philos_and_forks(t_data *data)
 {
-	// int	i;
-
-	// i = 0;
 	data->philos = malloc(sizeof(t_philo) * data->arg->n_philo);
 	if (!data->philos)
 	{

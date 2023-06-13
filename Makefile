@@ -1,8 +1,8 @@
-NAME = philosopher
+NAME = philo
 
-CC = gcc
+CC = cc
 
-FLAGS = -Wall -Werror -Wextra -g
+FLAGS = -Wall -Werror -Wextra -g -pthread
 
 LIBFT_PATH = lib/libft
 SRCS_PATH = src/
@@ -14,7 +14,6 @@ LIBFT = $(LIBFT_PATH)/libft.a
 SRCS_fILE = main.c\
 		check_arg.c\
 		init_data.c\
-		debug.c\
 		create_philos_and_forks.c\
 		start.c\
 		time.c\

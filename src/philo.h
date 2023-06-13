@@ -1,4 +1,4 @@
-	/* ************************************************************************** */
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   philo.h                                            :+:      :+:    :+:   */
@@ -6,7 +6,7 @@
 /*   By: ktunchar <ktunchar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/29 04:32:52 by ktunchar          #+#    #+#             */
-/*   Updated: 2023/06/10 00:41:12 by ktunchar         ###   ########.fr       */
+/*   Updated: 2023/06/14 00:31:40 by ktunchar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,14 @@
 # include <sys/time.h>
 # include <limits.h>
 
-typedef	struct timeval t_time;
+# define T_DIED "\e[0;31m%ldms philo%d Died\e[0m\n"
+# define T_LTAKING "%ldms philo%d is taking left fork\n"
+# define T_RTAKING "%ldms philo%d is taking right fork\n"
+# define T_EATING "%ldms philo%d is Eating\n"
+# define T_THINKING "%ldms philo%d is Thinking\n"
+# define T_SLEEPING "%ldms philo%d is Sleeping\n"
+
+typedef struct timeval	t_time;
 
 typedef struct s_arg{
 	long long	n_philo;
@@ -31,60 +38,42 @@ typedef struct s_arg{
 }t_arg;
 
 typedef struct s_philo{
-	pthread_t th;
-	int	id;
-	int	left;
-	int	right;
-	int	n_eat;
-	int	done;
-	long	last_eat_ms;
-	long	start_ms;
-	
-}t_philo;
+	pthread_t	th;
+	int			id;
+	int			left;
+	int			right;
+	int			n_eat;
+	int			done;
+	long		last_eat_ms;
+	long		start_ms;	
+}	t_philo;
 
 typedef struct s_data{
 	int				philo_id;
 	long			ms_start;
-	t_philo 		*philos;
-	pthread_mutex_t *forks;
+	t_philo			*philos;
+	pthread_mutex_t	*forks;
 	t_arg			*arg;
-	int				die_flag;
-	
-	
-}t_data;
+	int				die_flag;	
+}	t_data;
 
-#define DIED 0
-#define EATING 1
-#define THINKING 2
-#define SLEEPING 3
-#define	T_DIED "\e[0;31m%ldms philo%d Died\e[0m\n"
-#define	T_LTAKING "%ldms philo%d is taking left fork\n"
-#define	T_RTAKING "%ldms philo%d is taking right fork\n"
-#define	T_EATING "%ldms philo%d is Eating\n"
-#define	T_THINKING "%ldms philo%d is Thinking\n"
-#define	T_SLEEPING "%ldms philo%d is Sleeping\n"
 // error
 int		check_arg(int ac, char **av);
 
 // get_data_from_arg && starting
 t_arg	*init_arg(int ac, char **av);
-t_data *ft_start(int ac, char **av);
+t_data	*ft_start(int ac, char **av);
 int		create_philos_and_forks(t_data *data);
 
-// debugging
-void	print_arg_data(t_arg *arg);
-
 // routine
-void    *routine(void *arg);
+void	*routine(void *arg);
 
 // time
 long	ms_from_epoch(void);
 long	ms_from_start(t_data *data);
 long	ms_time_diff(long past);
-
-int	check_die(t_data  *data);
+int		check_die(t_data *data);
 void	free_philo(t_data *data);
 void	free_arg(t_data *data);
-
 
 #endif
